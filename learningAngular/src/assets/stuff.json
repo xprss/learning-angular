@@ -1,6 +1,6 @@
 {
-    "mainTitle": "Maaaaain",
-    "subTitle": "Suuuuuub",
-    "miniTitle": "Miniiiiiiii",
-    "paragraph": "this is the paragraph"
+    "mainTitle": "Header 1",
+    "subTitle": "Header 2",
+    "miniTitle": "Header 3",
+    "paragraph": "Lorem ipsum dolor sit amet."
 }

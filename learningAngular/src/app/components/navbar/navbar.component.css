@@ -1,6 +1,26 @@
+/* Option 2: Import via CSS */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+
 .navbar {
-    background-color: chocolate;
-    border-radius: 0px 0px 15px 15px;
-    padding: 15px;
-    margin: 0px;
+    background: linear-gradient(#e66465, #9198e5);
+    padding: 0px 30px 0px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+}
+
+.account-icon {
+    font-size: 32px;
+}
+
+#account-i {
+    transition-duration: 0.4s;
+    color: #ffffff;
+}
+
+#account-i:hover {
+    transition-duration: 0.4s;
+    color: #dddddd;
 }
