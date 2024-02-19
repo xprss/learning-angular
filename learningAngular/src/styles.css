@@ -1,4 +1,336 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
 body {
-    margin: 0px;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "slnt" 0;
+  background-image: linear-gradient(
+    to right,
+    #fec6fc,
+    #fec6fc,
+    #fec6fc,
+    #fec6fc,
+    #fec6fc,
+    #fadcfc,
+    #f9dffd,
+    #f8e3fe,
+    #f8ebff,
+    #f8f2ff,
+    #fbf9ff,
+    #ffffff
+  );
+  background-size: 150% 150%;
+	animation: gradient 12s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+
+.main-title {
+  cursor: pointer;
+  transition-duration: 0.8s;
+}
+
+.main-title:hover {
+  color: #8a2be2;
+  transition-duration: 0.4s;
+}
+
+.filters-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.filter-label {
+  padding-top: 3px;
+}
+
+.filter {
+  background-color: #d5b1f7;
+  color: white;
+  border-radius: 25px;
+  width: fit-content;
+  padding: 3px 12px;
+  margin-left: 8px;
+  transition-duration: 0.2s;
+}
+
+.filter:hover {
+  box-shadow: 0 0 3px rgb(148, 61, 231);
+  background-color: rgb(148, 61, 231);
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.filter:focus {
+  background-color: #8a2be2;
+  transition-duration: 0.2s;
+}
+
+.master {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 0;
+  flex-shrink: 1;
+  flex-grow: 3;
+  justify-content: center;
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 1rem;
+}
+
+.app-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.entry {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  border-style: solid;
+  border-color: gray;
+  border-width: 1px;
+  align-items: center;
+  vertical-align: middle;
+  margin-bottom: 1rem;
+  padding: 6px 3px;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.entry:hover {
+  box-shadow: 8px 8px 7px blueviolet;
+  background-color: rgba(137, 43, 226, 0.076);
+  transition-duration: 0.1s;
+}
+
+.entry:focus {
+  border-color: blueviolet;
+  box-shadow: 3px 3px 5px blueviolet;
+  background-color: rgba(137, 43, 226, 0.076);
+  transition-duration: 0.1s;
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px !important;
+}
+
+.rigth-arrow {
+  font-size: 10px !important;
+  justify-content: right;
+}
+
+.add-button-style {
+  background-color: blueviolet;
+  color: white;
+  border-radius: 2rem;
+  padding: 8px;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.add-button-style:hover {
+  background-color: rgb(183, 130, 233);
+  transition-duration: 0.2s;
+  box-shadow: 0 0 5px #d5b1f7;
+}
+
+.close-button-style {
+  transition-duration: 0.6s;
+  border-radius: 2rem;
+}
+
+.close-button-style:hover {
+  background-color: red;
+  color: white;
+  border-radius: 2rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.done-button-style {
+  transition-duration: 0.6s;
+  border-radius: 2rem;
+}
+
+.done-button-style:hover {
+  background-color: green;
+  color: white;
+  border-radius: 2rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.clone-button-style {
+  transition-duration: 0.6s;
+  border-radius: 2rem;
+}
+
+.clone-button-style:hover {
+  background-color: purple;
+  color: white;
+  border-radius: 2rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.edit-button-style {
+  transition-duration: 0.6s;
+  border-radius: 2rem;
+}
+
+.edit-button-style:hover {
+  background-color: rgb(182, 182, 80);
+  color: white;
+  border-radius: 2rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 0, "opsz" 24;
+}
+
+.text-label {
+  vertical-align: top;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.input-check {
+  accent-color: blueviolet;
+  width: 24px;
+  height: 24px;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-basis: 0;
+  flex-shrink: 1;
+  flex-grow: 5;
+  padding: 1rem 2rem 2rem 2rem;
+}
+
+.details-entry {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1rem;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-width: 1px;
+  border-left-color: grey;
+  border-right-width: 1px;
+  border-right-color: grey;
+  border-bottom-width: 1px;
+  border-bottom-color: grey;
+  box-shadow: 0px 10px 4px grey;
+  height: max-content;
+  padding: 0 1rem 1rem 1rem;
+  transition-duration: 1.5s;
+}
+
+.details-entry:hover {
+  box-shadow: 0px 10px 15px grey;
+  transition-duration: 0.8s;
+}
+
+.details-icons {
+  display: flex;
+  align-items: end;
+  justify-items: end;
+  justify-content: right;
+  flex-direction: row;
+  margin: 0;
+}
+
+.details-title {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.details-day {
+  text-align: center;
+}
+
+.details-description {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.details-tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
+.tag {
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 25px;
+  width: fit-content;
+  padding: 3px 12px;
+  transition-duration: 0.2s;
+  margin-top: 6px;
+  margin-left: 4px;
+}
+
+.tag:hover {
+  box-shadow: 0 0 3px rgb(148, 61, 231);
+  background-color: rgb(148, 61, 231);
+  transition-duration: 0.2s;
+  cursor: default;
+}
+
+.info {
+  text-align: center;
+  justify-content: center;
+}
+
+.with-margin-top {
+  margin-top: 1rem;
+}
+
+.with-margin-left {
+  margin-left: 0.5rem;
+}
+
+.info-small {
+  font-size: 12px;
 }

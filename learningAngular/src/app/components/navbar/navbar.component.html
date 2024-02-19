@@ -1,4 +1,12 @@
-<div class="navbar">
-    <h3>LIST S.p.A.</h3>
-    <i id="account-i" class="bi bi-person-circle account-icon"></i>
+<div class="header">
+    <h1 class="main-title" (click)="home()"><i>my</i><b>Agenda</b></h1>
+    <div class="filters-wrapper">
+        <div id="all-filter" class="filter" (click)="this.setFilter(0)">All</div>
+        <div id="pending-filter" class="filter" (click)="this.setFilter(1)">
+            Pending
+        </div>
+        <div id="completed-filter" class="filter" (click)="this.setFilter(2)">
+            Completed
+        </div>
+    </div>
 </div>

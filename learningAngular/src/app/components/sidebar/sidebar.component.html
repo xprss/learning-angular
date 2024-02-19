@@ -1,0 +1,20 @@
+<div id="entries-root" class="entries">
+
+    <div style="display: flex; justify-content: center;" *ngIf="loading">
+        <p>Loading...</p>
+    </div>
+    <div *ngIf="!loading">
+        <div *ngFor="let task of tasks">
+            <div *ngIf="checkFilterCompliance(task)" id="task.id" class="entry" tabindex="1">
+                <input class="input-check" type="checkbox" id="'entry'+task.id" [checked]="task.done" />
+                <label class="text-label">{{task.title}}</label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="add-button">
+    <span onclick="newTask()" class="add-button-style material-symbols-outlined">
+        Add
+    </span>
+</div>
