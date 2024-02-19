@@ -5,36 +5,24 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
   font-variation-settings: "slnt" 0;
-  background-image: linear-gradient(
-    to right,
-    #fec6fc,
-    #fec6fc,
-    #fec6fc,
-    #fec6fc,
-    #fec6fc,
-    #fadcfc,
-    #f9dffd,
-    #f8e3fe,
-    #f8ebff,
-    #f8f2ff,
-    #fbf9ff,
-    #ffffff
-  );
+  background-image: linear-gradient(to left bottom, #ffa4ef, #ffbbf2, #ffd1f6, #ffe6f9, #fffcfe);
   background-size: 150% 150%;
-	animation: gradient 12s ease infinite;
-	height: 100vh;
+  animation: gradient 12s ease infinite;
+  height: 100vh;
 }
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .header {
@@ -63,6 +51,7 @@ body {
 
 .filter-label {
   padding-top: 3px;
+  user-select: none;
 }
 
 .filter {
@@ -73,6 +62,7 @@ body {
   padding: 3px 12px;
   margin-left: 8px;
   transition-duration: 0.2s;
+  user-select: none;
 }
 
 .filter:hover {
@@ -121,6 +111,7 @@ body {
   padding: 6px 3px;
   transition-duration: 0.3s;
   cursor: pointer;
+  user-select: none;
 }
 
 .entry:hover {
@@ -256,14 +247,16 @@ body {
   border-right-color: grey;
   border-bottom-width: 1px;
   border-bottom-color: grey;
-  box-shadow: 0px 10px 4px grey;
+  box-shadow: 0px 5px 18px #811f71;
   height: max-content;
   padding: 0 1rem 1rem 1rem;
   transition-duration: 1.5s;
+  background-color: #ffe2fa;
+  border-radius: 20px;
 }
 
 .details-entry:hover {
-  box-shadow: 0px 10px 15px grey;
+  box-shadow: 0px 10px 30px #811f71;
   transition-duration: 0.8s;
 }
 
@@ -273,7 +266,7 @@ body {
   justify-items: end;
   justify-content: right;
   flex-direction: row;
-  margin: 0;
+  margin: 1rem 0 0 0;
 }
 
 .details-title {

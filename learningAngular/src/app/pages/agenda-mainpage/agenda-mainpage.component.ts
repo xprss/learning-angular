@@ -19,11 +19,30 @@ export class AgendaMainpageComponent implements OnInit {
   currentFilter: FilterEnum = FilterEnum.ALL
   tasks: TaskDTO[] = []
   loading: boolean = true;
+  isDetailsOpened: boolean = false;
 
   constructor(private service: TaskService) { }
 
   ngOnInit(): void {
-    this.service.getTasks().then(tasks => {this.tasks = tasks; this.loading = false})
+    this.service.getTasks().then(tasks => { this.tasks = tasks; this.loading = false })
   }
 
+  updateCurrentTask(task: TaskDTO): void {
+    this.currentTask = task
+    this.isDetailsOpened = true
+  }
+
+  updateFilter(newFilter: FilterEnum) {
+    this.currentFilter = newFilter
+  }
+
+  closeDetails(_e: any): void {
+    this.isDetailsOpened = false;
+  }
+
+  home(): void {
+    this.currentFilter = FilterEnum.ALL
+    this.isDetailsOpened = false
+    this.currentTask = undefined
+  }
 }

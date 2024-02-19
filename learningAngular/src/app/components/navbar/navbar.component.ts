@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FilterEnum } from '../../dto/FilterEnum';
 
 @Component({
@@ -9,21 +9,26 @@ import { FilterEnum } from '../../dto/FilterEnum';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  @Input() @Output() currentFilter: FilterEnum = FilterEnum.ALL
+  @Input() currentFilter: FilterEnum = FilterEnum.ALL
+  @Output() homeEventEmitter: EventEmitter<void> = new EventEmitter<void>()
+  @Output() currentFilterEmitter: EventEmitter<FilterEnum> = new EventEmitter<FilterEnum>()
 
   setFilter(_filter: number): void {
     switch (_filter) {
-      case 0: this.currentFilter = FilterEnum.ALL; console.log("0");
-       break;
-      case 1: this.currentFilter = FilterEnum.PENDING; console.log("1");
-       break;
-      case 2: this.currentFilter = FilterEnum.COMPLETED; console.log("2");
-       break;
+      case 0:
+        this.currentFilterEmitter.emit(FilterEnum.ALL);
+        break;
+      case 1:
+        this.currentFilterEmitter.emit(FilterEnum.PENDING);
+        break;
+      case 2:
+        this.currentFilterEmitter.emit(FilterEnum.COMPLETED);
+        break;
       default: break;
     }
   }
 
-  home() {
-    
+  home(): void {
+    this.homeEventEmitter.emit()
   }
 }

@@ -5,6 +5,7 @@ import { TaskDTO } from '../dto/TaskDTO';
   providedIn: 'root'
 })
 export class TaskService {
+  dbNextIndex: number = 7;
   readonly dbTasks: TaskDTO[] = [
     {
       id: 0,
@@ -77,11 +78,28 @@ export class TaskService {
   async getTasks(): Promise<TaskDTO[]> {
     let promise = new Promise<TaskDTO[]>((res, rej) => {
       setTimeout(() => {
-        console.log("ITSTIME");
-        
         res(this.dbTasks)
       }, 2500);
     })
     return promise
+  }
+
+  addNewTask() {
+
+  }
+
+  duplicateTask(srcTask: TaskDTO) {
+    const dstTask: TaskDTO = {id: -1, title: srcTask.title, weekday: srcTask.weekday, description: srcTask.description, tags: srcTask.tags, done: false}
+    dstTask.id = this.dbNextIndex++;
+    this.dbTasks.push(dstTask)
+  }
+
+  getTaskByID(id: number): TaskDTO | undefined {
+    for (let task of this.dbTasks) {
+      if (task.id === id) {
+        return task
+      }
+    }
+    return undefined
   }
 }

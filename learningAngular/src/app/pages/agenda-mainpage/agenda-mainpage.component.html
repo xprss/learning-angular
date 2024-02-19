@@ -1,5 +1,7 @@
-<app-navbar [currentFilter]="currentFilter"></app-navbar>
+<app-navbar [currentFilter]="currentFilter" (currentFilterEmitter)="updateFilter($event)" (homeEventEmitter)="home()"></app-navbar>
 <div class="app-body">
-    <app-sidebar [currentFilter]="currentFilter" [loading]="loading" [currentTask]="currentTask" class="master" [tasks]="tasks"></app-sidebar>
-    <app-details [currentTask]="currentTask" class="details"></app-details>
+    <app-sidebar (taskEventEmitter)="updateCurrentTask($event)" [currentFilter]="currentFilter" [loading]="loading"
+        [currentTask]="currentTask" class="master" [tasks]="tasks"></app-sidebar>
+    <app-details [isDetailsOpened]="isDetailsOpened" (closeDetailsEmitter)="closeDetails($event)"
+        [currentTask]="currentTask" class="details"></app-details>
 </div>

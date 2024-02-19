@@ -1,15 +1,19 @@
-<div id="showDetailsID" class="details-entry">
+<div *ngIf="this.isDetailsOpened===true && this.currentTask" id="showDetailsID" class="details-entry">
     <div class="details-icons">
-        <div class="clone-button-style material-symbols-outlined with-margin-left">content_copy</div>
-        <div class="close-button-style material-symbols-outlined with-margin-left">close</div>
+        <div class="clone-button-style material-symbols-outlined with-margin-left" (click)="duplicate()">content_copy</div>
+        <div class="close-button-style material-symbols-outlined with-margin-left" (click)="close()">close</div>
     </div>
-    <div class="details-title">Title</div>
-    <div class="details-day">Day</div>
-    <div class="details-description">Description</div>
-    <div class="details-tags"></div>
+    <div class="details-title"><b>{{this.currentTask.title}}</b></div>
+    <div class="details-day"><i>{{this.currentTask.weekday}}</i></div>
+    <div class="details-description with-margin-top">{{this.currentTask.description}}</div>
+    <div class="details-tags with-margin-top">
+        <div class="tag" *ngFor="let tag of this.currentTask.tags">
+            #{{tag | totag}}
+        </div>
+    </div>
 </div>
 
-<div id="detailsID" class="details">
+<div *ngIf="this.isDetailsOpened===false" id="detailsID" class="details">
     <div id="info" class="info">
         <b>Nothing to see here.</b>
         <div class="info-small">
